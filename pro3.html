@@ -1,0 +1,71 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>演習3</title>
+
+<script type="text/javascript">
+function Calc() {
+
+    var num1, num2;
+    var ope;
+    var result;
+
+    num1 = parseInt(document.form1.txA.value);
+    num2 = parseInt(document.form1.txB.value);
+    ope = document.form1.selOpe.value;
+
+    switch(ope){
+
+        case "1":
+            result = num1 + num2;
+            break;
+
+        case "2":
+            result = num1 - num2;
+            break;
+
+        case "3":
+            result = num1 * num2;
+            break;
+
+        case "4":
+            result = num1 / num2;
+            break;
+
+        default:
+            result = "エラー";
+    }
+
+    document.form1.txC.value = result;
+}
+</script>
+
+</head>
+
+<body>
+
+<form name="form1">
+
+<input type="text" name="txA">
+
+<select name="selOpe" size="1">
+    <option value="1">＋</option>
+    <option value="2">－</option>
+    <option value="3">×</option>
+    <option value="4">÷</option>
+</select>
+
+<input type="text" name="txB">
+
+＝
+
+<input type="text" name="txC">
+
+<br><br>
+
+<input type="button" value="計算" onclick="Calc()">
+
+</form>
+
+</body>
+</html>

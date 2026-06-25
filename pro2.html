@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>演習2</title>
+
+<script type="text/javascript">
+function Calc() {
+
+    var startHour, startMin;
+    var finishHour, finishMin;
+    var startTime, finishTime, totalMin;
+
+    startHour = parseInt(document.form1.txH1.value);
+    startMin = parseInt(document.form1.txM1.value);
+
+    finishHour = parseInt(document.form1.txH2.value);
+    finishMin = parseInt(document.form1.txM2.value);
+
+    startTime = startHour * 60 + startMin;
+    finishTime = finishHour * 60 + finishMin;
+
+    totalMin = finishTime - startTime;
+
+    document.form1.txAns.value = totalMin;
+}
+</script>
+
+</head>
+
+<body>
+
+<form name="form1">
+
+月 <input type="text" name="txMonth" size="3"> 日
+<input type="text" name="txDay" size="3">
+
+<br><br>
+
+<input type="text" name="txH1" size="3"> 時
+<input type="text" name="txM1" size="3"> 分から
+
+<br><br>
+
+<input type="text" name="txH2" size="3"> 時
+<input type="text" name="txM2" size="3"> 分まで
+
+<br><br>
+
+<input type="button" value="合計" onclick="Calc()">
+
+<br><br>
+
+<input type="text" name="txAns" size="5"> 分です。
+
+</form>
+
+</body>
+</html>
